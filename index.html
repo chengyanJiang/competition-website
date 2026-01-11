@@ -1,0 +1,268 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>XX Challenge 2026</title>
+
+  <!-- Bootstrap 5 (CDN, no build needed) -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    body { background: #f6f8fb; }
+    .brand-dot { width:10px;height:10px;border-radius:50%;display:inline-block;background:#4f46e5;margin-right:8px; }
+    .hero {
+      background: linear-gradient(180deg, #ffffff 0%, #f6f8fb 100%);
+      border-bottom: 1px solid rgba(0,0,0,.06);
+    }
+    .card { border: 1px solid rgba(0,0,0,.08); border-radius: 14px; }
+    .sticky-side { position: sticky; top: 84px; }
+    .tab-content { padding-top: 14px; }
+    .badge-soft { background: rgba(79,70,229,.10); color:#3730a3; border: 1px solid rgba(79,70,229,.18); }
+    .small-muted { color: rgba(0,0,0,.6); }
+    a { text-decoration: none; }
+    a:hover { text-decoration: underline; }
+  </style>
+</head>
+
+<body>
+  <!-- Top nav -->
+  <nav class="navbar navbar-expand-lg bg-white border-bottom sticky-top">
+    <div class="container">
+      <a class="navbar-brand fw-semibold" href="#">
+        <span class="brand-dot"></span>XX Challenge 2026
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="nav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#tabs">Overview</a></li>
+          <li class="nav-item"><a class="nav-link" href="#dates">Dates</a></li>
+          <li class="nav-item"><a class="nav-link" href="#data">Data</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero py-5">
+    <div class="container">
+      <div class="row align-items-center g-4">
+        <div class="col-lg-8">
+          <h1 class="display-6 fw-semibold mb-3">XX Challenge 2026</h1>
+          <p class="lead small-muted mb-3">
+            用一句话描述你的任务：例如“面向……的……评测任务”，输入输出是什么，目标是什么。
+          </p>
+          <div class="d-flex flex-wrap gap-2">
+            <span class="badge badge-soft rounded-pill px-3 py-2">No online submission</span>
+            <span class="badge text-bg-light rounded-pill px-3 py-2 border">Public website</span>
+            <span class="badge text-bg-light rounded-pill px-3 py-2 border">Leaderboard (optional)</span>
+          </div>
+
+          <div class="mt-4 d-flex flex-wrap gap-2">
+            <a class="btn btn-primary" href="#data">Get Data</a>
+            <a class="btn btn-outline-secondary" href="#tabs">Read Details</a>
+            <a class="btn btn-outline-secondary" href="https://github.com/你的组织/competition-website" target="_blank" rel="noreferrer">GitHub Repo</a>
+          </div>
+        </div>
+
+        <div class="col-lg-4">
+          <div class="card p-4 shadow-sm">
+            <div class="d-flex justify-content-between align-items-center">
+              <div>
+                <div class="fw-semibold">Status</div>
+                <div class="small-muted">Website online</div>
+              </div>
+              <span class="badge text-bg-success rounded-pill">Open</span>
+            </div>
+            <hr/>
+            <div class="row g-2 small">
+              <div class="col-5 small-muted">Organizers</div>
+              <div class="col-7">你的组委会</div>
+
+              <div class="col-5 small-muted">Venue</div>
+              <div class="col-7">例如：Workshop / Conference</div>
+
+              <div class="col-5 small-muted">Task</div>
+              <div class="col-7">例如：QA / Classification</div>
+
+              <div class="col-5 small-muted">Metric</div>
+              <div class="col-7">例如：F1 / EM / mAP</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- News -->
+      <div class="row mt-4">
+        <div class="col-12">
+          <div class="card p-4">
+            <div class="fw-semibold mb-2">News</div>
+            <ul class="mb-0">
+              <li><span class="small-muted">2026-01-11</span>：Website online.</li>
+              <li><span class="small-muted">YYYY-MM-DD</span>：Dataset released.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main -->
+  <main class="container my-5">
+    <div class="row g-4">
+      <!-- Left: tabs like CodaLab -->
+      <div class="col-lg-8" id="tabs">
+        <div class="card p-4 shadow-sm">
+          <ul class="nav nav-tabs" role="tablist">
+            <li class="nav-item" role="presentation">
+              <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#t-overview" type="button" role="tab">
+                Overview
+              </button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" data-bs-toggle="tab" data-bs-target="#t-eval" type="button" role="tab">
+                Evaluation
+              </button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" data-bs-toggle="tab" data-bs-target="#t-submit" type="button" role="tab">
+                Submission
+              </button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" data-bs-toggle="tab" data-bs-target="#t-results" type="button" role="tab">
+                Results
+              </button>
+            </li>
+          </ul>
+
+          <div class="tab-content">
+            <div class="tab-pane fade show active" id="t-overview" role="tabpanel">
+              <h5 class="fw-semibold mt-2">Task description</h5>
+              <p class="small-muted">
+                这里写任务介绍：背景、输入输出、数据格式、允许使用的外部资源、要提交什么等。
+              </p>
+
+              <h5 class="fw-semibold mt-4">Track</h5>
+              <ul class="small-muted">
+                <li>Track 1：……</li>
+                <li>Track 2：……</li>
+              </ul>
+
+              <h5 class="fw-semibold mt-4">Baseline</h5>
+              <p class="small-muted mb-0">
+                Baseline 代码链接：<a href="#" target="_blank" rel="noreferrer">GitHub</a>；论文/报告：<a href="#" target="_blank" rel="noreferrer">PDF</a>
+              </p>
+            </div>
+
+            <div class="tab-pane fade" id="t-eval" role="tabpanel">
+              <h5 class="fw-semibold mt-2">Metrics</h5>
+              <p class="small-muted">
+                写清楚评测指标定义、计算方式、是否 macro/micro、是否忽略大小写等。
+              </p>
+
+              <h5 class="fw-semibold mt-4">Evaluation script</h5>
+              <p class="small-muted mb-0">
+                如果你们不在线评测，也建议放一个本地评测脚本说明或下载链接。
+              </p>
+            </div>
+
+            <div class="tab-pane fade" id="t-submit" role="tabpanel">
+              <h5 class="fw-semibold mt-2">How to submit</h5>
+              <p class="small-muted">
+                你们不需要在线提交的话，这里写“通过邮件/表单提交结果文件”或“仅收论文报告”等。
+              </p>
+              <div class="alert alert-warning mb-0">
+                <div class="fw-semibold">Tip</div>
+                <div class="small">把提交格式写得非常具体：文件名、列顺序、分隔符、编码、压缩方式。</div>
+              </div>
+            </div>
+
+            <div class="tab-pane fade" id="t-results" role="tabpanel">
+              <h5 class="fw-semibold mt-2">Leaderboard (optional)</h5>
+              <p class="small-muted">
+                如果你们不做实时榜单，可以把最终结果表贴在这里（或链接到 Google Sheet / PDF）。
+              </p>
+
+              <div class="table-responsive">
+                <table class="table table-sm align-middle">
+                  <thead>
+                    <tr>
+                      <th>#</th>
+                      <th>Team</th>
+                      <th>Score</th>
+                      <th>Paper/Code</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr><td>1</td><td>ExampleLab</td><td>0.9123</td><td><a href="#">link</a></td></tr>
+                    <tr><td>2</td><td>Baseline</td><td>0.8000</td><td><a href="#">link</a></td></tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <p class="small-muted mb-0">
+                （你也可以把结果做成静态 JSON，然后页面渲染成表格；但先别急，先把最小版本跑起来。）
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: sidebar blocks like CodaLab -->
+      <div class="col-lg-4">
+        <div class="sticky-side d-grid gap-3">
+          <div class="card p-4 shadow-sm" id="dates">
+            <div class="fw-semibold mb-2">Important Dates</div>
+            <ul class="small mb-0">
+              <li><span class="small-muted">YYYY-MM-DD</span> Registration opens</li>
+              <li><span class="small-muted">YYYY-MM-DD</span> Data release</li>
+              <li><span class="small-muted">YYYY-MM-DD</span> Submission deadline</li>
+              <li><span class="small-muted">YYYY-MM-DD</span> Paper deadline</li>
+            </ul>
+          </div>
+
+          <div class="card p-4 shadow-sm" id="data">
+            <div class="fw-semibold mb-2">Data & Resources</div>
+            <div class="d-grid gap-2">
+              <a class="btn btn-outline-primary btn-sm" href="#" target="_blank" rel="noreferrer">Download (Train/Dev)</a>
+              <a class="btn btn-outline-primary btn-sm" href="#" target="_blank" rel="noreferrer">Download (Test)</a>
+              <a class="btn btn-outline-secondary btn-sm" href="#" target="_blank" rel="noreferrer">Data format</a>
+              <a class="btn btn-outline-secondary btn-sm" href="#" target="_blank" rel="noreferrer">FAQ</a>
+            </div>
+            <div class="small small-muted mt-2">
+              提醒：写清楚 license、引用方式、数据使用范围。
+            </div>
+          </div>
+
+          <div class="card p-4 shadow-sm">
+            <div class="fw-semibold mb-2">Rules</div>
+            <ul class="small-muted mb-0">
+              <li>禁止使用测试集人工标注。</li>
+              <li>允许/不允许外部数据：……</li>
+              <li>结果可复现性要求：……</li>
+            </ul>
+          </div>
+
+          <div class="card p-4 shadow-sm" id="contact">
+            <div class="fw-semibold mb-2">Contact</div>
+            <div class="small">
+              Email：<a href="mailto:xxx@xxx.com">xxx@xxx.com</a><br/>
+              GitHub Issues：<a href="#" target="_blank" rel="noreferrer">link</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="py-5 text-center small-muted">
+      <div>© 2026 XX Challenge · Powered by GitHub Pages</div>
+    </footer>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
