@@ -228,7 +228,7 @@
                 <!-- Dataset examples image -->
                 <div class="mt-3">
                 <div class="small-muted mb-2"><b>UAV-IQA dataset examples</b></div>
-                <img src="0000225.jpg"
+                <img src="/Users/chengyanjiang/Documents/质量评价/images/0000100.jpg"
                     alt="UAV-IQA dataset examples"
                     class="img-fluid rounded-3 border shadow-sm">
                 <div class="small text-muted mt-2">
@@ -266,8 +266,9 @@
 
               <h5 class="fw-semibold mt-4">Baseline</h5>
               <p class="small-muted mb-0">
-                Test code:
-                <a href="#" target="_blank" rel="noreferrer">GitHub</a>
+                Training datasets:
+                cat train.tar.gz.part-* > train.tar.gz
+                tar -xzf train.tar.gz
                 <!-- 【这里改】把 # 换成真实链接；没有就删 Baseline 区域 -->
               </p>
             </div>
@@ -319,11 +320,42 @@
                 <!-- 【这里改】评测指标说明 -->
               </p>
 
-              <h5 class="fw-semibold mt-4">Evaluation script</h5>
+              <h5 class="fw-semibold mt-4" id="dataset-format">Dataset format</h5>
               <p class="small-muted mb-0">
                 We will provide an evaluation script that takes as input a CSV file.
                 <!-- 【这里改】本地评测脚本/说明 -->
               </p>
+              <div class="card p-4 shadow-sm mt-3">
+                  <div class="fw-semibold mb-2">How to download & extract (split archives)</div>
+                  <div class="small-muted mb-3">
+                    The training set is released as split archive parts due to file size limits. Please download <b>all parts</b>,
+                    then merge and extract as follows.
+                  </div>
+
+                  <div class="row g-3">
+                    <!-- macOS / Linux -->
+                    <div class="col-12">
+                      <div class="fw-semibold">macOS / Linux</div>
+                      <div class="small text-muted mb-2">Merge all parts into one file, then extract:</div>
+                      <pre class="bg-light border rounded-3 p-3 mb-0"><code>cat train.tar.gz.part-* &gt; train.tar.gz
+                tar -xzf train.tar.gz</code></pre>
+                    </div>
+
+                    <!-- Windows -->
+                    <div class="col-12">
+                      <div class="fw-semibold mt-2">Windows</div>
+                      <div class="small text-muted mb-2">
+                        Use <b>7-Zip</b> to extract from the first part (it will automatically use the remaining parts):
+                      </div>
+                      <pre class="bg-light border rounded-3 p-3 mb-0"><code>Right-click train.zip.001 → 7-Zip → Extract Here</code></pre>
+                    </div>
+                  </div>
+
+                  <div class="alert alert-warning mt-3 mb-0">
+                    <b>Important:</b> Ensure all part files are in the <u>same folder</u> before merging/extracting.
+                    If you miss any part, extraction will fail.
+                  </div>
+                </div>
             </div>
 
             <!-- Submission 内容 -->
@@ -406,8 +438,8 @@
             <div class="d-grid gap-2">
               <a class="btn btn-outline-primary btn-sm" href="#" target="_blank" rel="noreferrer">Download (Train/Dev)</a>
               <a class="btn btn-outline-primary btn-sm" href="#" target="_blank" rel="noreferrer">Download (Test)</a>
-              <a class="btn btn-outline-secondary btn-sm" href="#" target="_blank" rel="noreferrer">Data format</a>
-              <a class="btn btn-outline-secondary btn-sm" href="#" target="_blank" rel="noreferrer">FAQ</a>
+              <a class="btn btn-outline-secondary btn-sm" href="#dataset-format" id="btn-data-format">Data format</a>
+              
               <!-- 【这里改】把 # 换成真实链接；没有就先写 coming soon 的页面链接 -->
             </div>
 
@@ -434,7 +466,7 @@
             <div class="fw-semibold mb-2">Contact</div>
             <div class="small">
               Email：<a href="mailto:xxx@xxx.com">cjiang92-c@my.cityu.edu.hk</a><br/>
-              GitHub Issues：<a href="#" target="_blank" rel="noreferrer">link</a>
+              
               <!-- 【这里改】邮箱、Issues 链接 -->
             </div>
           </div>
@@ -453,5 +485,19 @@
   <!-- Bootstrap 的 JS：用于 Tab 切换、手机菜单折叠等交互 -->
   <!-- 不用改 -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+  document.getElementById('btn-data-format')?.addEventListener('click', function () {
+    // 切换到 Evaluation tab
+    const evalTabBtn = document.querySelector('button[data-bs-target="#t-eval"]');
+    if (evalTabBtn) {
+      const tab = new bootstrap.Tab(evalTabBtn);
+      tab.show();
+    }
+    // 等 tab 显示后再滚动到 dataset-format
+    setTimeout(() => {
+      document.getElementById('dataset-format')?.scrollIntoView({ behavior: 'smooth' });
+    }, 50);
+  });
+</script>
 </body>
 </html>
